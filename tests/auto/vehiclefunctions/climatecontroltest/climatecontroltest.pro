@@ -4,15 +4,15 @@
 #
 #-------------------------------------------------
 
-QT       += testlib QtIVICore
+QT       += testlib QtIVICore QtIVIVehicleFunctions
 
-TARGET = tst_servicemanagertest
+TARGET = tst_climatecontroltest
 CONFIG   += console
 CONFIG   -= app_bundle
 
 TEMPLATE = app
 
 SOURCES += \
-    tst_servicemanagertest.cpp
+    tst_climatecontroltest.cpp
 
 DEFINES += SRCDIR=\\\"$$PWD/\\\"

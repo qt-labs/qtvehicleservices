@@ -44,9 +44,9 @@
 
 #include <QtCore/QObject>
 
-#include <QtIviCore/qtivizonedfeatureinterface.h>
-#include <QtIviCore/qtivipropertyattribute.h>
-#include <QtIviVehicleFunctions/qtiviclimatecontrol.h>
+#include <QtIviCore/qivizonedfeatureinterface.h>
+#include <QtIviCore/qivipropertyattribute.h>
+#include <QtIviVehicleFunctions/qiviclimatecontrol.h>
 
 QT_BEGIN_NAMESPACE
 

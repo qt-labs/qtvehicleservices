@@ -39,7 +39,7 @@
 **
 ****************************************************************************/
 
-#include "qtivipropertyattribute.h"
+#include "qivipropertyattribute.h"
 
 QIviPropertyAttributeBase::QIviPropertyAttributeBase()
 {

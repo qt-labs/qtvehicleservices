@@ -54,9 +54,9 @@
 //
 
 #include <QtIviCore/QIviProperty>
-#include "private/qtiviabstractzonedfeature_p.h"
+#include "private/qiviabstractzonedfeature_p.h"
 
-#include "qtiviwindowcontrol.h"
+#include "qiviwindowcontrol.h"
 
 QT_BEGIN_NAMESPACE
 

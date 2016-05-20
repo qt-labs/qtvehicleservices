@@ -39,7 +39,7 @@
 **
 ****************************************************************************/
 
-#include "qtiviclimatecontrolbackendinterface.h"
+#include "qiviclimatecontrolbackendinterface.h"
 
 /*!
  * \class QIviClimateControlBackendInterface

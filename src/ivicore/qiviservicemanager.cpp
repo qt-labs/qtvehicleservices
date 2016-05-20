@@ -39,10 +39,10 @@
 **
 ****************************************************************************/
 
-#include "qtiviservicemanager.h"
+#include "qiviservicemanager.h"
 
-#include "qtiviproxyserviceobject_p.h"
-#include "qtiviservicemanager_p.h"
+#include "qiviproxyserviceobject_p.h"
+#include "qiviservicemanager_p.h"
 
 #include <QStringList>
 #include <QPluginLoader>

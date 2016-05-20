@@ -39,8 +39,8 @@
 **
 ****************************************************************************/
 
-#include "qtiviabstractfeaturelistmodel.h"
-#include "qtiviabstractfeaturelistmodel_p.h"
+#include "qiviabstractfeaturelistmodel.h"
+#include "qiviabstractfeaturelistmodel_p.h"
 
 QIviHelperFeature::QIviHelperFeature(const QString &interface, QIviAbstractFeatureListModel *model)
     : QIviAbstractFeature(interface)

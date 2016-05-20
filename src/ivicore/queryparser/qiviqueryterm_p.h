@@ -39,8 +39,8 @@
 **
 ****************************************************************************/
 
-#ifndef QIVIABSTRACTFEATURELISTMODEL_P_H
-#define QIVIABSTRACTFEATURELISTMODEL_P_H
+#ifndef QIVIQUERYTERM_P_H
+#define QIVIQUERYTERM_P_H
 
 //
 //  W A R N I N G
@@ -53,38 +53,50 @@
 // We mean it.
 //
 
-#include <private/qabstractitemmodel_p.h>
-
-#include "qtiviabstractfeaturelistmodel.h"
+#include "qiviqueryterm.h"
 
 QT_BEGIN_NAMESPACE
 
-class QIviHelperFeature : public QIviAbstractFeature
+class Q_QTIVICORE_EXPORT QIviConjunctionTermPrivate
 {
 public:
-    QIviHelperFeature(const QString &interface, QIviAbstractFeatureListModel *model);
+    QIviConjunctionTermPrivate();
 
-    bool acceptServiceObject(QIviServiceObject *so);
-    void connectToServiceObject(QIviServiceObject *so);
-    void disconnectFromServiceObject(QIviServiceObject *so);
-    void clearServiceObject();
-
-    using QIviAbstractFeature::interfaceName;
-    using QIviAbstractFeature::errorText;
-    using QIviAbstractFeature::setError;
-
-    QIviAbstractFeatureListModel *m_model;
+    QList<QIviAbstractQueryTerm*> m_terms;
+    QIviConjunctionTerm::Conjunction m_conjunction;
 };
 
-class Q_QTIVICORE_EXPORT QIviAbstractFeatureListModelPrivate : public QAbstractItemModelPrivate
+class Q_QTIVICORE_EXPORT QIviScopeTermPrivate
 {
 public:
-    QIviAbstractFeatureListModelPrivate(const QString &interface, QIviAbstractFeatureListModel *model);
-    virtual ~QIviAbstractFeatureListModelPrivate();
+    QIviScopeTermPrivate();
 
-    QIviHelperFeature *m_feature;
+    QIviAbstractQueryTerm* m_term;
+    bool m_negated;
+};
+
+class Q_QTIVICORE_EXPORT QIviFilterTermPrivate
+{
+public:
+    QIviFilterTermPrivate();
+
+    QString operatorToString() const;
+
+    QString m_property;
+    QIviFilterTerm::Operator m_operator;
+    QVariant m_value;
+    bool m_negated;
+};
+
+class Q_QTIVICORE_EXPORT QIviOrderTermPrivate
+{
+public:
+    QIviOrderTermPrivate();
+
+    bool m_ascending;
+    QString m_propertyName;
 };
 
 QT_END_NAMESPACE
 
-#endif // QIVIABSTRACTFEATURELISTMODEL_P_H
+#endif // QIVIQUERYTERM_P_H

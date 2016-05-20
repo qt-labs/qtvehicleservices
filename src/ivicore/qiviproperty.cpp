@@ -39,8 +39,8 @@
 **
 ****************************************************************************/
 
-#include "qtiviproperty.h"
-#include "qtiviproperty_p.h"
+#include "qiviproperty.h"
+#include "qiviproperty_p.h"
 
 #include <QMetaEnum>
 

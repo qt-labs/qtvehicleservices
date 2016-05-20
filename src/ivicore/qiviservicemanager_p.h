@@ -39,8 +39,8 @@
 **
 ****************************************************************************/
 
-#ifndef QIVIQUERYTERM_P_H
-#define QIVIQUERYTERM_P_H
+#ifndef QIVISERVICEMANAGER_P_H
+#define QIVISERVICEMANAGER_P_H
 
 //
 //  W A R N I N G
@@ -53,50 +53,63 @@
 // We mean it.
 //
 
-#include "qtiviqueryterm.h"
+#include <QtCore/QAbstractListModel>
+#include <QtCore/QVariantMap>
+#include <QtCore/QStringList>
+#include <QtCore/QMap>
+#include <QtCore/QSet>
+
+#include <QtIviCore/qtiviglobal.h>
+#include <QtIviCore/qiviservicemanager.h>
 
 QT_BEGIN_NAMESPACE
 
-class Q_QTIVICORE_EXPORT QIviConjunctionTermPrivate
-{
-public:
-    QIviConjunctionTermPrivate();
+class QPluginLoader;
+class QIviServiceInterface;
+class QIviServiceObject;
+class QIviProxyServiceObject;
 
-    QList<QIviAbstractQueryTerm*> m_terms;
-    QIviConjunctionTerm::Conjunction m_conjunction;
+struct Backend{
+    QVariantMap metaData;
+    QIviServiceInterface *interface;
+    QObject *interfaceObject;
+    QIviProxyServiceObject *proxyServiceObject;
+    QPluginLoader *loader;
 };
 
-class Q_QTIVICORE_EXPORT QIviScopeTermPrivate
+class Q_QTIVICORE_EXPORT QIviServiceManagerPrivate : public QObject
 {
+    Q_OBJECT
+
 public:
-    QIviScopeTermPrivate();
+    explicit QIviServiceManagerPrivate(QIviServiceManager *parent);
 
-    QIviAbstractQueryTerm* m_term;
-    bool m_negated;
-};
+    static QIviServiceManagerPrivate* get(QIviServiceManager *serviceManager);
 
-class Q_QTIVICORE_EXPORT QIviFilterTermPrivate
-{
-public:
-    QIviFilterTermPrivate();
+    QList<QIviServiceObject*> findServiceByInterface(const QString &interface, QIviServiceManager::SearchFlags searchFlags);
 
-    QString operatorToString() const;
+    void searchPlugins();
+    void registerBackend(const QString &fileName, const QJsonObject &metaData);
+    bool registerBackend(QObject *serviceBackendInterface, const QStringList &interfaces, QIviServiceManager::BackendType backendType);
+    void addBackend(struct Backend *backend);
 
-    QString m_property;
-    QIviFilterTerm::Operator m_operator;
-    QVariant m_value;
-    bool m_negated;
-};
+    void unloadAllBackends();
 
-class Q_QTIVICORE_EXPORT QIviOrderTermPrivate
-{
-public:
-    QIviOrderTermPrivate();
+    QIviServiceInterface *loadServiceBackendInterface(struct Backend *backend);
 
-    bool m_ascending;
-    QString m_propertyName;
+    QList<Backend*> m_backends;
+    QSet<QString> m_interfaceNames;
+
+    QIviServiceManager * const q_ptr;
+    Q_DECLARE_PUBLIC(QIviServiceManager)
+
+Q_SIGNALS:
+    void beginInsertRows(const QModelIndex &index, int start, int end);
+    void endInsertRows();
+
 };
 
 QT_END_NAMESPACE
 
-#endif // QIVIQUERYTERM_P_H
+#endif // QIVISERVICEMANAGER_P_H
+

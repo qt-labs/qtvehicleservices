@@ -39,8 +39,8 @@
 **
 ****************************************************************************/
 
-#ifndef QIVISERVICEMANAGER_P_H
-#define QIVISERVICEMANAGER_P_H
+#ifndef QIVIABSTRACTZONEDFEATURE_P_H
+#define QIVIABSTRACTZONEDFEATURE_P_H
 
 //
 //  W A R N I N G
@@ -53,63 +53,22 @@
 // We mean it.
 //
 
-#include <QtCore/QAbstractListModel>
-#include <QtCore/QVariantMap>
-#include <QtCore/QStringList>
-#include <QtCore/QMap>
-#include <QtCore/QSet>
-
-#include <QtIviCore/qtiviglobal.h>
-#include <QtIviCore/qtiviservicemanager.h>
+#include "qiviabstractfeature_p.h"
+#include "qiviabstractzonedfeature.h"
 
 QT_BEGIN_NAMESPACE
 
-class QPluginLoader;
-class QIviServiceInterface;
-class QIviServiceObject;
-class QIviProxyServiceObject;
-
-struct Backend{
-    QVariantMap metaData;
-    QIviServiceInterface *interface;
-    QObject *interfaceObject;
-    QIviProxyServiceObject *proxyServiceObject;
-    QPluginLoader *loader;
-};
-
-class Q_QTIVICORE_EXPORT QIviServiceManagerPrivate : public QObject
+class Q_QTIVICORE_EXPORT QIviAbstractZonedFeaturePrivate : public QIviAbstractFeaturePrivate
 {
-    Q_OBJECT
-
 public:
-    explicit QIviServiceManagerPrivate(QIviServiceManager *parent);
+    QIviAbstractZonedFeaturePrivate(const QString &interface, const QString &zone, QIviAbstractFeature *parent);
 
-    static QIviServiceManagerPrivate* get(QIviServiceManager *serviceManager);
-
-    QList<QIviServiceObject*> findServiceByInterface(const QString &interface, QIviServiceManager::SearchFlags searchFlags);
-
-    void searchPlugins();
-    void registerBackend(const QString &fileName, const QJsonObject &metaData);
-    bool registerBackend(QObject *serviceBackendInterface, const QStringList &interfaces, QIviServiceManager::BackendType backendType);
-    void addBackend(struct Backend *backend);
-
-    void unloadAllBackends();
-
-    QIviServiceInterface *loadServiceBackendInterface(struct Backend *backend);
-
-    QList<Backend*> m_backends;
-    QSet<QString> m_interfaceNames;
-
-    QIviServiceManager * const q_ptr;
-    Q_DECLARE_PUBLIC(QIviServiceManager)
-
-Q_SIGNALS:
-    void beginInsertRows(const QModelIndex &index, int start, int end);
-    void endInsertRows();
-
+    QString m_zone;
+    QList<QIviAbstractZonedFeature*> m_zoneFeatures;
+    QVariantMap m_zoneFeatureMap;
+    QVariantList m_zoneFeatureList;
 };
 
 QT_END_NAMESPACE
 
-#endif // QIVISERVICEMANAGER_P_H
-
+#endif // QIVIABSTRACTZONEDFEATURE_P_H

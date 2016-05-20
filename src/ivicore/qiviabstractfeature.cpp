@@ -39,11 +39,11 @@
 **
 ****************************************************************************/
 
-#include "qtiviabstractfeature.h"
-#include "qtiviabstractfeature_p.h"
+#include "qiviabstractfeature.h"
+#include "qiviabstractfeature_p.h"
 
-#include "qtiviserviceobject.h"
-#include "qtiviservicemanager.h"
+#include "qiviserviceobject.h"
+#include "qiviservicemanager.h"
 
 #include <QMetaEnum>
 #include <QDebug>

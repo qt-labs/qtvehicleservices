@@ -39,7 +39,7 @@
 **
 ****************************************************************************/
 
-#include "qtiviserviceobject.h"
+#include "qiviserviceobject.h"
 
 #include <QUuid>
 

@@ -39,7 +39,7 @@
 **
 ****************************************************************************/
 
-#include "qtivizonedfeatureinterface.h"
+#include "qivizonedfeatureinterface.h"
 
 /*!
    \class QIviZonedFeatureInterface

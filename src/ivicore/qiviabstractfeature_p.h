@@ -55,7 +55,7 @@
 
 #include <private/qobject_p.h>
 
-#include "qtiviabstractfeature.h"
+#include "qiviabstractfeature.h"
 
 QT_BEGIN_NAMESPACE
 

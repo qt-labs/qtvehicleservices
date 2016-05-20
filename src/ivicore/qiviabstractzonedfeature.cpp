@@ -40,11 +40,11 @@
 ****************************************************************************/
 
 #include <QtCore/qmetaobject.h>
-#include <QtIviCore/qtiviserviceobject.h>
+#include <QtIviCore/qiviserviceobject.h>
 
-#include "qtiviabstractzonedfeature.h"
-#include "qtiviabstractzonedfeature_p.h"
-#include "qtivizonedfeatureinterface.h"
+#include "qiviabstractzonedfeature.h"
+#include "qiviabstractzonedfeature_p.h"
+#include "qivizonedfeatureinterface.h"
 
 QIviAbstractZonedFeaturePrivate::QIviAbstractZonedFeaturePrivate(const QString &interface, const QString &zone, QIviAbstractFeature *parent)
     : QIviAbstractFeaturePrivate(interface, parent)

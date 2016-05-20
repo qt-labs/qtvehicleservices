@@ -39,7 +39,7 @@
 **
 ****************************************************************************/
 
-#include "qtiviwindowcontrolbackendinterface.h"
+#include "qiviwindowcontrolbackendinterface.h"
 
 /*!
  * \class QIviWindowControlBackendInterface

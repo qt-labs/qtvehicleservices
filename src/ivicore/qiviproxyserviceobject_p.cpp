@@ -39,42 +39,27 @@
 **
 ****************************************************************************/
 
-#ifndef QIVIWINDOWCONTROLBACKENDINTERFACE_H
-#define QIVIWINDOWCONTROLBACKENDINTERFACE_H
+#include "qiviproxyserviceobject_p.h"
 
-#include <QtCore/QObject>
-
-#include <QtIviCore/qtivizonedfeatureinterface.h>
-#include <QtIviCore/qtivipropertyattribute.h>
-#include <QtIviVehicleFunctions/qtiviwindowcontrol.h>
-
-QT_BEGIN_NAMESPACE
-
-class Q_QTIVIVEHICLEFUNCTIONS_EXPORT QIviWindowControlBackendInterface : public QIviZonedFeatureInterface
+QIviProxyServiceObject::QIviProxyServiceObject(QIviServiceInterface *interface)
+    : QIviServiceObject()
+    , m_interface(interface)
 {
-    Q_OBJECT
 
-public:
-    QIviWindowControlBackendInterface(QObject *parent = Q_NULLPTR);
+}
 
-    virtual void setHeaterMode(QIviWindowControl::HeaterMode value, const QString &zone) = 0;
-    virtual void setBlindMode(QIviWindowControl::BlindMode value, const QString &zone) = 0;
-    virtual void open(const QString &zone) = 0;
-    virtual void close(const QString &zone) = 0;
+QIviProxyServiceObject::~QIviProxyServiceObject()
+{
 
-Q_SIGNALS:
-    void heaterModeChanged(QIviWindowControl::HeaterMode value, const QString &zone = QString());
-    void heaterModeAttributeChanged(const QIviPropertyAttribute<QIviWindowControl::HeaterMode> &heaterMode, const QString &zone = QString());
-    void heaterEnabledChanged(bool enabled, const QString &zone = QString());
-    void heaterAttributeChanged(const QIviPropertyAttribute<bool> &heater, const QString &zone = QString());
-    void blindModeChanged(QIviWindowControl::BlindMode value, const QString &zone = QString());
-    void blindModeAttributeChanged(const QIviPropertyAttribute<QIviWindowControl::BlindMode> &blindMode, const QString &zone = QString());
-    void blindStateChanged(QIviWindowControl::State value, const QString &zone = QString());
-    void blindStateAttributeChanged(const QIviPropertyAttribute<QIviWindowControl::State> &blindState, const QString &zone = QString());
-    void stateChanged(QIviWindowControl::State value, const QString &zone = QString());
-    void stateAttributeChanged(const QIviPropertyAttribute<QIviWindowControl::State> &state, const QString &zone = QString());
-};
+}
 
-QT_END_NAMESPACE
+QStringList QIviProxyServiceObject::interfaces() const
+{
+    return m_interface->interfaces();
+}
 
-#endif // QIVIWINDOWCONTROLBACKENDINTERFACE_H
+QObject *QIviProxyServiceObject::interfaceInstance(const QString &interface) const
+{
+    return m_interface->interfaceInstance(interface);
+}
+

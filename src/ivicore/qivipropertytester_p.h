@@ -55,7 +55,7 @@
 
 #include <QtIviCore/QIviProperty>
 #include <QtIviCore/QIviPropertyFactory>
-#include <QtIviCore/qtiviqmlconversion_helper.h>
+#include <QtIviCore/qiviqmlconversion_helper.h>
 #include <QVariant>
 
 QT_BEGIN_NAMESPACE

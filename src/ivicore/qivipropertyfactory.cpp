@@ -39,7 +39,7 @@
 **
 ****************************************************************************/
 
-#include "qtivipropertyfactory.h"
+#include "qivipropertyfactory.h"
 
 /*!
  * \class QIviPropertyFactory

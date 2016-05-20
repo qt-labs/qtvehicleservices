@@ -44,8 +44,8 @@
 
 #include <QtIviCore/qtiviglobal.h>
 #include <QtIviCore/QIviProperty>
-#include <QtIviCore/qtivitypetraits.h>
-#include <QtIviCore/qtiviqmlconversion_helper.h>
+#include <QtIviCore/qivitypetraits.h>
+#include <QtIviCore/qiviqmlconversion_helper.h>
 #include <QMetaEnum>
 
 QT_BEGIN_NAMESPACE

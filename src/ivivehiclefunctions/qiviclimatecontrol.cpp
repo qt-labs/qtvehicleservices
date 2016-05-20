@@ -39,9 +39,9 @@
 **
 ****************************************************************************/
 
-#include "qtiviclimatecontrol.h"
-#include "qtiviclimatecontrol_p.h"
-#include "qtiviclimatecontrolbackendinterface.h"
+#include "qiviclimatecontrol.h"
+#include "qiviclimatecontrol_p.h"
+#include "qiviclimatecontrolbackendinterface.h"
 #include <QtIviCore/QIviServiceObject>
 #include <QtIviCore/QIviPropertyFactory>
 
@@ -1854,4 +1854,4 @@ void QIviClimateControl::setAutomaticClimateFanIntensityLevel(int value)
  * \sa automaticClimateFanIntensityLevelAttribute() automaticClimateFanIntensityLevel()
  */
 
- #include "moc_qtiviclimatecontrol.cpp"
+ #include "moc_qiviclimatecontrol.cpp"

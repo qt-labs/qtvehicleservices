@@ -39,8 +39,8 @@
 **
 ****************************************************************************/
 
-#include "qtiviqueryterm.h"
-#include "qtiviqueryterm_p.h"
+#include "qiviqueryterm.h"
+#include "qiviqueryterm_p.h"
 
 QIviConjunctionTermPrivate::QIviConjunctionTermPrivate()
     : m_conjunction(QIviConjunctionTerm::And)

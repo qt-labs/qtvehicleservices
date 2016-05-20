@@ -39,9 +39,9 @@
 **
 ****************************************************************************/
 
-#include "qtiviwindowcontrol.h"
-#include "qtiviwindowcontrol_p.h"
-#include "qtiviwindowcontrolbackendinterface.h"
+#include "qiviwindowcontrol.h"
+#include "qiviwindowcontrol_p.h"
+#include "qiviwindowcontrolbackendinterface.h"
 #include <QtIviCore/QIviPropertyFactory>
 #include <QtIviCore/QIviServiceObject>
 
@@ -761,4 +761,4 @@ void QIviWindowControl::close()
 
 
 
-#include "moc_qtiviwindowcontrol.cpp"
+#include "moc_qiviwindowcontrol.cpp"

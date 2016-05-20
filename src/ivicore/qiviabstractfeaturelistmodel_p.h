@@ -39,27 +39,52 @@
 **
 ****************************************************************************/
 
-#include "qtiviproxyserviceobject_p.h"
+#ifndef QIVIABSTRACTFEATURELISTMODEL_P_H
+#define QIVIABSTRACTFEATURELISTMODEL_P_H
 
-QIviProxyServiceObject::QIviProxyServiceObject(QIviServiceInterface *interface)
-    : QIviServiceObject()
-    , m_interface(interface)
+//
+//  W A R N I N G
+//  -------------
+//
+// This file is not part of the Qt API.  It exists purely as an
+// implementation detail. This header file may change from version to
+// version without notice, or even be removed.
+//
+// We mean it.
+//
+
+#include <private/qabstractitemmodel_p.h>
+
+#include "qiviabstractfeaturelistmodel.h"
+
+QT_BEGIN_NAMESPACE
+
+class QIviHelperFeature : public QIviAbstractFeature
 {
+public:
+    QIviHelperFeature(const QString &interface, QIviAbstractFeatureListModel *model);
 
-}
+    bool acceptServiceObject(QIviServiceObject *so);
+    void connectToServiceObject(QIviServiceObject *so);
+    void disconnectFromServiceObject(QIviServiceObject *so);
+    void clearServiceObject();
 
-QIviProxyServiceObject::~QIviProxyServiceObject()
+    using QIviAbstractFeature::interfaceName;
+    using QIviAbstractFeature::errorText;
+    using QIviAbstractFeature::setError;
+
+    QIviAbstractFeatureListModel *m_model;
+};
+
+class Q_QTIVICORE_EXPORT QIviAbstractFeatureListModelPrivate : public QAbstractItemModelPrivate
 {
+public:
+    QIviAbstractFeatureListModelPrivate(const QString &interface, QIviAbstractFeatureListModel *model);
+    virtual ~QIviAbstractFeatureListModelPrivate();
 
-}
+    QIviHelperFeature *m_feature;
+};
 
-QStringList QIviProxyServiceObject::interfaces() const
-{
-    return m_interface->interfaces();
-}
+QT_END_NAMESPACE
 
-QObject *QIviProxyServiceObject::interfaceInstance(const QString &interface) const
-{
-    return m_interface->interfaceInstance(interface);
-}
-
+#endif // QIVIABSTRACTFEATURELISTMODEL_P_H

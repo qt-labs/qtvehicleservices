@@ -43,6 +43,7 @@
 #define MEDIAINDEXERBACKEND_H
 
 #include <QtIviMedia/QIviMediaIndexerControlBackendInterface>
+#include <QIviRemoteObjectReplicaHelper>
 #include <QRemoteObjectNode>
 
 #include "rep_qivimediaindexer_replica.h"
@@ -57,13 +58,9 @@ public:
     void pause() override;
     void resume() override;
 
-public Q_SLOTS:
-    void onReplicaStateChanged(QRemoteObjectReplica::State newState,
-                        QRemoteObjectReplica::State oldState);
-    void onNodeError(QRemoteObjectNode::ErrorCode code);
-
 private:
     QSharedPointer<QIviMediaIndexerReplica> m_replica;
+    QIviRemoteObjectReplicaHelper *m_helper;
 };
 
 #endif // MEDIAINDEXERBACKEND_H

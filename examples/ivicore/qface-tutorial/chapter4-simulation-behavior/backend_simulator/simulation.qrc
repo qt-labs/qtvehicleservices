@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>simulation.qml</file>
-    </qresource>
-</RCC>

@@ -51,31 +51,33 @@
 ****************************************************************************/
 
 /*!
-     \example ifvehiclefunctions/climate_widget
-     \title Climate Control Widget Example
+     \example ifvehiclefunctions/climate-qml
+     \title Climate Control QML Example
      \ingroup qtifvehiclefunctions-examples
 
-     \brief This example shows how to access the climate control from C++.
-     \image examples_climate_widget.png
+     \brief The Example shows how to access the climate control from QML.
+     \image climate-qml.png
 
-     This example shows how to access the climate control from the C++.
+     The example shows how to access the climate control from QML.
 
-     The first thing to do is to create a QIfClimateControl instance in our
-     MainWindow constructor. As we only have one Climate backend and don't want
-     to choose which one to use, we call \l {QIfAbstractFeature::}{startAutoDiscovery}
-     to start searching for a suitable backend right away and pick the first one
-     that matches.
+     In the example, ClimateControl is created and autoDiscovery enabled.
+     When autoDiscovery is enabled, the module starts searching for the presence
+     of a plugin that implements QIfClimateControlBackendInterface.
+     \snippet ifvehiclefunctions/climate-qml/main.qml 1
 
      \note To simplify the deployment process, this example loads a simulation backend.
 
-     \l {QIfClimateControl::}{isValid()} is used for verifying that the
-     autoDiscovery found a backend:
-     \snippet ifvehiclefunctions/climate_widget/mainwindow.cpp 1
+     If discovery fails, a message dialog is shown:
+     \snippet ifvehiclefunctions/climate-qml/main.qml 4
 
-     The constructor then continues to connect the climate control
-     attribute change signals to the UI components:
-     \snippet ifvehiclefunctions/climate_widget/mainwindow.cpp 2
+     As a Climate System can support multiple climate zones, we need to
+     differentiate between the zones. A \e {general zone} can be used for settings
+     that are applied to all zones.
 
-     Airflow direction is controlled using these functions:
-     \snippet ifvehiclefunctions/climate_widget/mainwindow.cpp 3
+     General ClimateControl attribute values are handled in check boxes as follows:
+     \snippet ifvehiclefunctions/climate-qml/main.qml 2
+
+     For the zoned ClimateControl, the \l [QML] {AbstractZonedFeature::}{zoneAt}
+     property is used for controlling the values from the front left climate zone:
+     \snippet ifvehiclefunctions/climate-qml/main.qml 3
 */

@@ -1,14 +1,10 @@
 %modules = ( # path to module name map
-    "QtInterfaceFramework" => "$basedir/src/interfaceframework",
     "QtIfVehicleFunctions" => "$basedir/src/ifvehiclefunctions;$out_basedir/src/ifvehiclefunctions",
     "QtIfMedia" => "$basedir/src/ifmedia",
-    "QtIfRemoteObjectsHelper" => "$basedir/src/helper/remoteobjects",
 );
 %moduleheaders = ( # restrict the module headers to those found in relative path
 );
 %classnames = (
-     "qifqueryterm.h" => "QIfAbstractQueryTerm", "QIfConjunctionTerm", "QIfScopeTerm", "QIfFilterTerm", "QIfOrderTerm",
-     "qifstandarditem.h" => "QIfFilterAndBrowseModelItem"
 );
 %deprecatedheaders = (
 );
@@ -22,10 +18,10 @@
     "qtbase" => "",
     "qtdeclarative" => "",
     "qtmultimedia" => ""
+    "qtinterfaceframework" => ""
 );
 
 @ignore_headers = ( "moc_predefs.h" );
 %inject_headers = (
-    "$basedir/src/helper/remoteobjects" => [ "rep_qifpagingmodel_source.h", "rep_qifpagingmodel_replica.h" ]
 )
 

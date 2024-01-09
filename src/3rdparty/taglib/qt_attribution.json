@@ -1,8 +1,8 @@
 {
     "Id": "taglib",
     "Name": "taglib",
-    "QDocModule": "qtinterfaceframework",
-    "QtUsage": "Used by the QIfMedia reference simulation when indexing local media",
+    "QDocModule": "qtvehicleservices",
+    "QtUsage": "Used by the QtIfMedia reference simulation when indexing local media",
     "Path": "taglib",
 
     "Description": "TagLib is a library for reading and editing the meta-data of several popular audio formats.",

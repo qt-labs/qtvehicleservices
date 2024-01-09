@@ -1,0 +1,78 @@
+project                       = QtVehicleServices
+description                   = Qt Vehicle Services Documentation
+version                       = $QT_VERSION
+url                           = http://doc.qt.io/QtVehicleServices
+
+moduleheader                  = QtVehicleServicesDoc
+includepaths                  = -I . \
+
+headerdirs                   += . \
+
+sourcedirs                   += . \
+
+imagedirs                    += images
+exampledirs                  += ../../examples \
+                                snippets/ \
+                                $$BUILDDIR/../../examples \
+
+examples.fileextensions      += *.qface *.yaml
+
+include(../ifvehiclefunctions/doc/qtifvehiclefunctions.qdocconf)
+include(../ifmedia/doc/qtifmedia.qdocconf)
+include(exampleurl-qtvehicleservices.qdocconf)
+
+# include the backend plugins documentation
+include(../plugins/ifmedia/doc/qtifmedia_plugins.qdocconf)
+include(../plugins/ifvehiclefunctions/doc/qtifvehiclefunctions_plugins.qdocconf)
+
+
+# include extra image to qhp (referred to in the generated examples-manifest.xml)
+HTML.extraimages             += images/qtvehicleservices-codesample.png
+qhp.QtVehicleServices.extraFiles         += images/qtvehicleservices-codesample.png
+
+qhp.projects                  = QtVehicleServices
+
+qhp.QtVehicleServices.file                = qtvehicleservices.qhp
+qhp.QtVehicleServices.namespace           = org.qt-project.vehicleservices.$QT_VERSION_TAG
+qhp.QtVehicleServices.virtualFolder       = qtvehicleservices
+qhp.QtVehicleServices.indexTitle          = Qt Vehicle Services
+qhp.QtVehicleServices.indexRoot           =
+
+qhp.QtVehicleServices.filterAttributes    = qtvehicleservices $QT_VERSION qtrefdoc
+qhp.QtVehicleServices.customFilters.Qt.name = QtVehicleServices $QT_VERSION
+qhp.QtVehicleServices.customFilters.Qt.filterAttributes = qtvehicleservices $QT_VERSION
+
+qhp.QtVehicleServices.subprojects         = classes qml examples
+
+qhp.QtVehicleServices.subprojects.classes.title = C++ Classes
+qhp.QtVehicleServices.subprojects.classes.indexTitle =  Qt Vehicle Services C++ Classes
+qhp.QtVehicleServices.subprojects.classes.selectors = class fake:headerfile
+qhp.QtVehicleServices.subprojects.classes.sortPages = true
+
+qhp.QtVehicleServices.subprojects.qml.title = QML Types
+qhp.QtVehicleServices.subprojects.qml.indexTitle =  Qt Vehicle Services QML Types
+qhp.QtVehicleServices.subprojects.qml.selectors = qmlclass
+qhp.QtVehicleServices.subprojects.qml.sortPages = true
+
+qhp.QtVehicleServices.subprojects.examples.title = Examples
+qhp.QtVehicleServices.subprojects.examples.indexTitle =  Qt Vehicle Services Examples
+qhp.QtVehicleServices.subprojects.examples.selectors = fake:example
+qhp.QtVehicleServices.subprojects.examples.sortPages = true
+
+tagfile                 = qtvehicleservices.tags
+
+depends += qtcore qtdbus qtwidgets qtdoc qtcmake qtquick qtqml qtremoteobjects qtinterfaceframework
+
+navigation.landingpage = "Qt Vehicle Services"
+navigation.cppclassespage = "Qt Vehicle Services C++ Classes"
+navigation.qmltypespage = "Qt Vehicle Services QML Types"
+buildversion = "Qt Vehicle Services $QT_VERSION"
+
+macro.fileLink = "\\l {https://code.qt.io/cgit/qt-labs/qtvehicleservices.git/tree/\1?h=$QT_VER}{\2}"
+
+manifestmeta.filters = vehicleservices
+manifestmeta.vehicleservices.names = *
+manifestmeta.vehicleservices.tags  = qtvehicleservices
+
+# Fail the documentation build if there are more warnings than the limit
+warninglimit = 0

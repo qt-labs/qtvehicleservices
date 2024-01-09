@@ -165,7 +165,7 @@
 /*!
     \group qtifvehiclefunctions-examples
     \ingroup all-examples
-    \ingroup interfaceframework-examples
+    \ingroup qtvehicleservices-examples
     \title Qt Interface Framework Vehicle Functions Examples
 
     \brief Examples for the Qt Interface Framework Vehicle Functions module

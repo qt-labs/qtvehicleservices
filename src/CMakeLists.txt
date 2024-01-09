@@ -34,3 +34,4 @@ if(QT_FEATURE_interfaceframework
     add_subdirectory(tools/media-simulation-server)
 endif()
 add_subdirectory(plugins)
+add_subdirectory(doc)

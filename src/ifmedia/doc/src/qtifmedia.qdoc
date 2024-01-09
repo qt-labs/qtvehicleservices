@@ -14,16 +14,26 @@
 
     The Qt Interface Framework Media QML API provides media searching, browsing and playback management functions for in-vehicle infotainment systems.
 
-    To include the definitions of the module's classes, use the following directive:
+    To link against the Qt Interface Framework Media module, use the following directive:
+
+    Using CMake:
 
     \code
-    #include <QtIfMedia>
+    find_package(Qt6 COMPONENTS IfMedia REQUIRED)
+    target_link_libraries(mytarget PRIVATE Qt6::IfMedia)
     \endcode
 
-    To link against the module, add this line to your qmake .pro file:
+    Using qmake:
 
     \code
     QT += ifmedia
+    \endcode
+
+    To use Qt Interface Framework Media C++ classes in your application, use the
+    following include statement:
+
+    \code
+    #include <QtIfMedia>
     \endcode
 */
 
@@ -50,7 +60,7 @@
 /*!
     \group qtifmedia-examples
     \ingroup all-examples
-    \ingroup interfaceframework-examples
+    \ingroup qtvehicleservices-examples
     \title Qt Interface Framework Media Examples
 
     \brief Examples for the Qt Interface Framework Media module

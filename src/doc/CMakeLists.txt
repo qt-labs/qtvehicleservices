@@ -22,6 +22,7 @@ target_link_libraries(Documentation
     PUBLIC
         Qt::InterfaceFramework
 )
+set_target_properties(Documentation PROPERTIES LINKER_LANGUAGE CXX)
 
 qt_internal_add_docs(Documentation
     ${DOC_CONF}

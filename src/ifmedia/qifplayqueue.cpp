@@ -471,7 +471,7 @@ QVariant QIfPlayQueue::data(const QModelIndex &index, int role) const
 }
 
 /*!
-    \fn T QIfPlayQueue::at(int i) const
+    \fn template <typename T> T QIfPlayQueue::at(int i) const
 
     Returns the item at index \a i converted to the template type T.
 */

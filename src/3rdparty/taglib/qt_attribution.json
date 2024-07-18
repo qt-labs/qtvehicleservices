@@ -10,7 +10,7 @@
     "Version": "1.12",
 
     "License": "Lesser GNU General Public License and Mozilla Public License",
-    "LicenseId": "LGPL AND MPL",
+    "LicenseId": "LGPL-2.1-only AND MPL-1.1",
     "LicenseFiles": [ "taglib/COPYING.LGPL", "taglib/COPYING.MPL" ],
     "CopyrightFile": "COPYRIGHT.txt"
 }

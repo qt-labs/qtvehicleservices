@@ -36,7 +36,8 @@ QString mediaDatabaseFile(const QVariantMap &serviceSettings)
 
     if (useTemporaryDatabase) {
         auto *tempFile = new QTemporaryFile(qApp);
-        tempFile->open();
+        if (!tempFile->open())
+            qFatal("Couldn't open temporary file: %s: %s", qPrintable(tempFile->fileName()), qPrintable(tempFile->errorString()));
         dbFile = tempFile->fileName();
         qCInfo(media) << "Using the temporary database: " << tempFile->fileName();
     } else if (!database.isEmpty()) {

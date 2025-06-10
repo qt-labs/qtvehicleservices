@@ -15,10 +15,7 @@ endif()
 if(QT_FEATURE_interfaceframework
         AND QT_FEATURE_remoteobjects
         AND QT_FEATURE_vehiclefunctions_qtro_simulation_server
-        AND NOT ANDROID
-        AND NOT IOS
-        AND NOT WASM
-        AND NOT rtems
+        AND (LINUX OR MACOS OR (WIN32 AND NOT WINRT))
         AND NOT QT_FEATURE_host_tools_only)
     add_subdirectory(tools/vehiclefunctions-simulation-server)
 endif()
@@ -26,10 +23,7 @@ if(QT_FEATURE_interfaceframework
         AND QT_FEATURE_media_qtro_simulation_server
         AND QT_FEATURE_remoteobjects
         AND QT_FEATURE_media_simulation_backend
-        AND NOT ANDROID
-        AND NOT IOS
-        AND NOT WASM
-        AND NOT rtems
+        AND (LINUX OR MACOS OR (WIN32 AND NOT WINRT))
         AND NOT QT_FEATURE_host_tools_only)
     add_subdirectory(tools/media-simulation-server)
 endif()

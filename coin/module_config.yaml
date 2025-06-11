@@ -17,7 +17,7 @@ accept_configuration:
       not_equals_value: WebAssembly
     - condition: property
       property: target.osVersion
-      not_equals_value: SLES_15_SP5
+      not_contains_value: SLES_15
 
 instructions:
   Build:

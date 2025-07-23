@@ -18,6 +18,10 @@ accept_configuration:
     - condition: property
       property: target.osVersion
       not_contains_value: SLES_15
+    - condition: property
+      property: target.osVersion
+      not_contains_value: QNX_800
+
 
 instructions:
   Build:

@@ -1,16 +1,16 @@
 dependencies:
   ../../qt/qtdeclarative:
-    ref: cf5cdbb8a188d828662ed4d64004fadb2b817f10
+    ref: c2b654e282c085d6bebdcba6174a91a2cb987e2b
     required: true
   ../../qt/qtinterfaceframework:
-    ref: 8548bf8a98ca046639b5d876dd0f5b1a7a297d3f
+    ref: d9340493cde40955414820971953ec916698a06f
     required: true
   ../../qt/qtmultimedia:
-    ref: 3ab3e80560225a8d529fd4b8ed8e3f9a6afe7f80
+    ref: 5ccd2c6b52a3aeecc4402e652c5dc4d7066128b5
     required: true
   ../../qt/qtremoteobjects:
-    ref: 943036215e25fd0315886e29780f5c58aab44181
+    ref: 6a98fb0a728f20b473662b571c3f325778565309
     required: true
   ../../qt/qttools:
-    ref: 6529a48d0bfba8bf8d772e7ccd46213777b5608d
+    ref: 5e25997074163913d824675404ce884a799e46e3
     required: false

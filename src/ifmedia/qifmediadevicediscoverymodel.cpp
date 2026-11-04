@@ -110,7 +110,7 @@ QIfMediaDeviceDiscoveryModelBackendInterface *QIfMediaDeviceDiscoveryModelPrivat
 
 /*!
     \qmltype MediaDeviceDiscoveryModel
-    \instantiates QIfMediaDeviceDiscoveryModel
+    \nativetype QIfMediaDeviceDiscoveryModel
     \inqmlmodule QtInterfaceFramework.Media
     \inherits AbstractFeatureListModel
     \brief Provides a model for discovering media devices.

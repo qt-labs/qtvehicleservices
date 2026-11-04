@@ -266,7 +266,7 @@ QIfMediaPlayerBackendInterface *QIfPlayQueuePrivate::playerBackend() const
 
 /*!
     \qmltype PlayQueue
-    \instantiates QIfPlayQueue
+    \nativetype QIfPlayQueue
     \inqmlmodule QtInterfaceFramework.Media
     \inherits QAbstractListModel
     \brief Provides a play queue for the MediaPlayer.
@@ -492,7 +492,7 @@ QVariant QIfPlayQueue::get(int i) const
 }
 
 /*!
-    \qmlmethod PlayQueue::insert(int index, PlayableItem item)
+    \qmlmethod void PlayQueue::insert(int index, PlayableItem item)
 
     Insert the \a item at the position \a index.
 
@@ -518,7 +518,7 @@ void QIfPlayQueue::insert(int index, const QVariant &variant)
 }
 
 /*!
-    \qmlmethod PlayQueue::remove(int index)
+    \qmlmethod void PlayQueue::remove(int index)
 
     Removes the item at position \a index from the play queue.
 */
@@ -536,7 +536,7 @@ void QIfPlayQueue::remove(int index)
 }
 
 /*!
-    \qmlmethod PlayQueue::move(int cur_index, int new_index)
+    \qmlmethod void PlayQueue::move(int cur_index, int new_index)
 
     Moves the item at position \a cur_index to the new position \a new_index the play queue.
 */

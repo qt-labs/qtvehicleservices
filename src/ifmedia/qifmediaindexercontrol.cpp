@@ -70,7 +70,7 @@ QIfMediaIndexerControlBackendInterface *QIfMediaIndexerControlPrivate::indexerBa
 
 /*!
     \qmltype MediaIndexerControl
-    \instantiates QIfMediaIndexerControl
+    \nativetype QIfMediaIndexerControl
     \inqmlmodule QtInterfaceFramework.Media
     \inherits AbstractFeature
     \brief Provides an interface to control the media indexer.
@@ -151,7 +151,7 @@ QIfMediaIndexerControl::State QIfMediaIndexerControl::state() const
 }
 
 /*!
-    \qmlmethod MediaIndexerControl::pause()
+    \qmlmethod void MediaIndexerControl::pause()
 
     Pauses the currently ongoing indexing operation.
 
@@ -173,7 +173,7 @@ void QIfMediaIndexerControl::pause()
 }
 
 /*!
-    \qmlmethod MediaIndexerControl::resume()
+    \qmlmethod void MediaIndexerControl::resume()
 
     Resumes from the Paused state and resumes the indexing operation.
 

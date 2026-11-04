@@ -128,7 +128,7 @@ QIfAmFmTunerBackendInterface *QIfAmFmTunerPrivate::tunerBackend() const
 
 /*!
     \qmltype AmFmTuner
-    \instantiates QIfAmFmTuner
+    \nativetype QIfAmFmTuner
     \inqmlmodule QtInterfaceFramework.Media
     \inherits AbstractFeature
     \brief Provides a interface to control the AM/FM tuner.
@@ -274,7 +274,7 @@ bool QIfAmFmTuner::isScanRunning() const
 }
 
 /*!
-    \qmlmethod AmFmTuner::tune(AmFmTunerStation station)
+    \qmlmethod void AmFmTuner::tune(AmFmTunerStation station)
 
     Tunes to the provided \a station.
 */
@@ -313,7 +313,7 @@ void QIfAmFmTuner::setBand(QIfAmFmTuner::Band band)
 }
 
 /*!
-    \qmlmethod AmFmTuner::stepUp()
+    \qmlmethod void AmFmTuner::stepUp()
 
     Increases the frequency by the current bands step size.
 */
@@ -332,7 +332,7 @@ void QIfAmFmTuner::stepUp()
 }
 
 /*!
-    \qmlmethod AmFmTuner::stepDown()
+    \qmlmethod void AmFmTuner::stepDown()
 
     Decreases the frequency by the current bands step size.
 */
@@ -351,7 +351,7 @@ void QIfAmFmTuner::stepDown()
 }
 
 /*!
-    \qmlmethod AmFmTuner::seekUp()
+    \qmlmethod void AmFmTuner::seekUp()
 
     Seeks the next available Station in upwards direction and tunes it.
 
@@ -373,7 +373,7 @@ void QIfAmFmTuner::seekUp()
 }
 
 /*!
-    \qmlmethod AmFmTuner::seekDown()
+    \qmlmethod void AmFmTuner::seekDown()
 
     Seeks the next available Station in downwards direction and tunes it.
 
@@ -395,7 +395,7 @@ void QIfAmFmTuner::seekDown()
 }
 
 /*!
-    \qmlmethod AmFmTuner::startScan()
+    \qmlmethod void AmFmTuner::startScan()
 
     Starts a scan through all available stations.
 
@@ -426,7 +426,7 @@ void QIfAmFmTuner::startScan()
 }
 
 /*!
-    \qmlmethod AmFmTuner::stopScan()
+    \qmlmethod void AmFmTuner::stopScan()
 
     Stops the currently active scan. If no scan is active, this method does nothing.
 

@@ -147,7 +147,7 @@ QIfMediaPlayerBackendInterface *QIfMediaPlayerPrivate::playerBackend() const
 
 /*!
     \qmltype MediaPlayer
-    \instantiates QIfMediaPlayer
+    \nativetype QIfMediaPlayer
     \inqmlmodule QtInterfaceFramework.Media
     \inherits AbstractFeature
     \brief Provides an interface to control a media player.
@@ -364,7 +364,7 @@ void QIfMediaPlayer::setPosition(qint64 position)
 }
 
 /*!
-    \qmlmethod MediaPlayer::play()
+    \qmlmethod void MediaPlayer::play()
 
     Starts to play the current track. If the playQueue is empty
     it's up to the backend to decide what to do.
@@ -388,7 +388,7 @@ void QIfMediaPlayer::play()
 }
 
 /*!
-    \qmlmethod MediaPlayer::pause()
+    \qmlmethod void MediaPlayer::pause()
 
     Pauses the currently ongoing playback.
 
@@ -410,7 +410,7 @@ void QIfMediaPlayer::pause()
 }
 
 /*!
-    \qmlmethod MediaPlayer::stop()
+    \qmlmethod void MediaPlayer::stop()
 
     Stops the currently ongoing playback.
 
@@ -432,7 +432,7 @@ void QIfMediaPlayer::stop()
 }
 
 /*!
-    \qmlmethod MediaPlayer::seek(offset)
+    \qmlmethod void MediaPlayer::seek(offset)
 
     Seeks into the current track using \a offset.
 
@@ -458,7 +458,7 @@ void QIfMediaPlayer::seek(qint64 offset)
 }
 
 /*!
-    \qmlmethod MediaPlayer::next()
+    \qmlmethod void MediaPlayer::next()
 
     Skips to the next track in the playQueue.
 
@@ -480,7 +480,7 @@ void QIfMediaPlayer::next()
 }
 
 /*!
-    \qmlmethod MediaPlayer::previous()
+    \qmlmethod void MediaPlayer::previous()
 
     Skips to the previous track in the playQueue.
 

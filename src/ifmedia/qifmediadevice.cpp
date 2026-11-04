@@ -28,7 +28,7 @@ QT_BEGIN_NAMESPACE
 
 /*!
     \qmltype MediaDevice
-    \instantiates QIfMediaDevice
+    \nativetype QIfMediaDevice
     \inqmlmodule QtInterfaceFramework.Media
     \inherits ServiceObject
     \brief MediaDevice is the base item for all Media Devices.
@@ -88,7 +88,7 @@ QIfMediaDevice::QIfMediaDevice(QObject *parent)
 
 /*!
     \qmltype MediaUsbDevice
-    \instantiates QIfMediaUsbDevice
+    \nativetype QIfMediaUsbDevice
     \inqmlmodule QtInterfaceFramework.Media
     \ingroup qtif_qmlmediadevices
     \inherits MediaDevice
@@ -118,7 +118,7 @@ QString QIfMediaUsbDevice::type() const
 }
 
 /*!
-    \qmlmethod MediaUsbDevice::eject()
+    \qmlmethod void MediaUsbDevice::eject()
 
     Ejects the USB media device and makes sure all data is written to the thumb-drive so it can safely be removed.
 */

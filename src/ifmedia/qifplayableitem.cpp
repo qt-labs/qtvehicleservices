@@ -65,7 +65,7 @@ public:
 
 /*!
     \qmltype PlayableItem
-    \instantiates QIfPlayableItem
+    \nativetype QIfPlayableItem
     \inqmlmodule QtInterfaceFramework.Media
     \inherits StandardItem
     \brief The PlayableItem is the base class of a row in the PlayQueue model.
@@ -74,7 +74,7 @@ public:
 */
 
 /*!
-    \qmlproperty QUrl PlayableItem::url
+    \qmlproperty url PlayableItem::url
 
     The url to the resource which should be played.
 
@@ -158,7 +158,7 @@ bool QIfPlayableItem::operator==(const QIfPlayableItem &other) const
 
 /*!
     \qmltype AudioTrackItem
-    \instantiates QIfAudioTrackItem
+    \nativetype QIfAudioTrackItem
     \inqmlmodule QtInterfaceFramework.Media
     \inherits PlayableItem
     \brief The AudioTrackItem represents a playable audio track.

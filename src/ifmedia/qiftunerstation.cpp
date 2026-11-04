@@ -56,7 +56,7 @@ public:
 
 /*!
     \qmltype TunerStation
-    \instantiates QIfTunerStation
+    \nativetype QIfTunerStation
     \inqmlmodule QtInterfaceFramework.Media
     \inherits StandardItem
     \brief The TunerStation represents a tuner station.
@@ -288,7 +288,7 @@ bool QIfTunerStation::operator==(const QIfTunerStation &other) const
 
 /*!
     \qmltype AmFmTunerStation
-    \instantiates QIfAmFmTunerStation
+    \nativetype QIfAmFmTunerStation
     \inqmlmodule QtInterfaceFramework.Media
     \inherits TunerStation
     \brief The TunerStation represents a tuner station.
